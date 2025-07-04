@@ -340,3 +340,56 @@ section {
         height: 150px;
     }
 }
+
+
+/* Gallery Slider */
+.gallery-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-grid {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.gallery-grid img {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* Lightbox overlay */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
